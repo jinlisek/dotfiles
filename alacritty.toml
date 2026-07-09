@@ -1,0 +1,15 @@
+[general]
+import = ["rose-pine.toml"]
+
+[font]
+normal = { family = "JetBrains Mono Nerd Font", style = "Regular" }
+size = 13
+
+[window]
+startup_mode = "Maximized"
+
+[scrolling]
+history = 100000
+
+[terminal]
+shell = { program = "/usr/bin/zsh", args = ["-l"] }
