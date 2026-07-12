@@ -30,7 +30,7 @@ mkdir -p "$HOME/.config"
 link_file "$DOTFILES_DIR/.zshrc" "$HOME/.zshrc"
 
 echo -e "${BLUE}Installing starship${NC}"
-VERSION=v1.26.0 curl -sS https://starship.rs/install.sh | sh
+curl -sS https://starship.rs/install.sh | sh -s -- --version v1.26.0 --bin-dir "$HOME/.local/bin" -y
 
 echo -e "${BLUE}Installing antidote${NC}"
 git clone --depth=1 --branch v2.1.0 https://github.com/mattmc3/antidote.git ${ZDOTDIR:-$HOME}/.antidote
