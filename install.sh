@@ -30,6 +30,7 @@ mkdir -p "$HOME/.config"
 link_file "$DOTFILES_DIR/.zshrc" "$HOME/.zshrc"
 
 echo -e "${BLUE}Installing starship${NC}"
+mkdir -p "$HOME/.local/bin"
 curl -sS https://starship.rs/install.sh | sh -s -- --version v1.26.0 --bin-dir "$HOME/.local/bin" -y
 
 echo -e "${BLUE}Installing antidote${NC}"
