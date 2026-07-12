@@ -31,9 +31,4 @@ link_file "$DOTFILES_DIR/.zshrc" "$HOME/.zshrc"
 link_file "$DOTFILES_DIR/.zsh_plugins.txt" "$HOME/.zsh_plugins.txt"
 link_file "$DOTFILES_DIR/starship.toml" "$HOME/.config/starship.toml"
 
-if [ "$SHELL" != "$(which zsh)" ] && [ -t 0 ]; then
-    echo -e "${BLUE}Changing detault shell to zsh...${NC}"
-    chsh -s "$(which zsh)"
-fi
-
 echo -e "${GREEN}=== Installation successful ===${NC}"
