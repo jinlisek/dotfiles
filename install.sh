@@ -15,13 +15,17 @@ link_file() {
     local dest="$2"
     echo "${BLUE}Linking $src -> $dest${NO_COLOR}"
 
-    if [ -e "$dest" ] && [ ! -L "$dest" ]; then
+    if [ -L "$dest" ]; then
+        echo -e "${BLUE}$dest link already exists, creating backup: $dest.bak${NO_COLOR}"
+        rm "$dest"
+    elif [ -e "$dest" ]; then
         echo -e "${BLUE}$dest already exists, creating backup: $dest.bak${NO_COLOR}"
         mv "$dest" "$dest.bak"
     fi
 
     ln -sf "$src" "$dest"
 }
+
 
 mkdir -p "$HOME/.config"
 
