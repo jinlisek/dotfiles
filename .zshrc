@@ -10,9 +10,13 @@ setopt hist_ignore_dups
 autoload -Uz compinit
 compinit
 
+bindkey -e
+
 alias ll="ls -lah"
 alias la="ls -A"
 alias l="ls -CF"
+
+alias lg="lazygit"
 
 
 # Better defaults
