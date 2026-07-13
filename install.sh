@@ -30,7 +30,7 @@ link_file "$DOTFILES_DIR/.zshrc" "$HOME/.zshrc"
 echo -e "${BLUE}Installing starship${NO_COLOR}"
 mkdir -p "$HOME/.local/bin"
 curl -sS https://starship.rs/install.sh | sh -s -- --version v1.26.0 --bin-dir "$HOME/.local/bin" -y
-link_file "$DOTFILES_DIR/starship.toml" "$HOME/.config/starship.toml"
+link_file "$DOTFILES_DIR/.config/starship.toml" "$HOME/.config/starship.toml"
 
 echo -e "${BLUE}Finished installing starship${NO_COLOR}"
 
@@ -60,5 +60,8 @@ fi
 link_file "$DOTFILES_DIR/.zsh_plugins.txt" "$HOME/.zsh_plugins.txt"
 
 echo -e "${BLUE}Finished installing antidote${NO_COLOR}"
+
+echo -e "${BLUE}Installing nvim${NO_COLOR}"
+link_file "${DOTFILES_DIR}/.config/nvim" "$HOME/.config/nvim"
 
 echo -e "${BLUE}Finished installing dotfiles${NO_COLOR}"

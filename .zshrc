@@ -18,16 +18,12 @@ alias l="ls -CF"
 
 alias lg="lazygit"
 
-
 # Better defaults
 export EDITOR=nvim
 export VISUAL=nvim
-
-export PATH=$HOME/.local/bin/:$PATH
-
+export PATH=$HOME/.local/bin/:$HOME/.cargo/bin/:$PATH
 
 eval "$(starship init zsh)"
-
 
 
 # Inicjalizacja Antidote
@@ -42,3 +38,7 @@ if [[ ! -f "$ZSH_PLUGINS_ZSH" || "$ZSH_PLUGINS_TXT" -nt "$ZSH_PLUGINS_ZSH" ]]; t
   antidote bundle < "$ZSH_PLUGINS_TXT" > "$ZSH_PLUGINS_ZSH"
 fi
 source "$ZSH_PLUGINS_ZSH"
+
+eval "$(zoxide init zsh)"
+
+
