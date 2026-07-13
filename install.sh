@@ -52,9 +52,9 @@ if [[ -d "$ANTIDOTE_DIR/.git" ]]; then
 elif [[ -e "$ANTIDOTE_DIR" ]]; then
   echo -e "${BLUE}$ANTIDOTE_DIR exists but is not a git repo, backing up${NO_COLOR}"
   mv "$ANTIDOTE_DIR" "$ANTIDOTE_DIR.bak"
-  git clone --depth=1 --tag "$ANTIDOTE_TAG" "$ANTIDOTE_REPO" "$ANTIDOTE_DIR"
+  git clone --depth=1 --branch "$ANTIDOTE_TAG" "$ANTIDOTE_REPO" "$ANTIDOTE_DIR"
 else
-  git clone --depth=1 --tag "$ANTIDOTE_TAG" "$ANTIDOTE_REPO" "$ANTIDOTE_DIR"
+  git clone --depth=1 --branch "$ANTIDOTE_TAG" "$ANTIDOTE_REPO" "$ANTIDOTE_DIR"
 fi
 
 link_file "$DOTFILES_DIR/.zsh_plugins.txt" "$HOME/.zsh_plugins.txt"
