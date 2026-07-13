@@ -9,6 +9,9 @@ NC='\033[0m' # No Color
 
 echo -e "${BLUE}Installing dotfiles${NC}"
 
+mkdir -p "$HOME/.local/bin"
+export PATH=$HOME/.local/bin/:$PATH
+
 DOTFILES_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 echo $DOTFILES_DIR
 
@@ -30,7 +33,6 @@ mkdir -p "$HOME/.config"
 link_file "$DOTFILES_DIR/.zshrc" "$HOME/.zshrc"
 
 echo -e "${BLUE}Installing starship${NC}"
-mkdir -p "$HOME/.local/bin"
 curl -sS https://starship.rs/install.sh | sh -s -- --version v1.26.0 --bin-dir "$HOME/.local/bin" -y
 
 echo -e "${BLUE}Installing antidote${NC}"
