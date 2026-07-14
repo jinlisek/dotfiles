@@ -21,7 +21,7 @@ alias lg="lazygit"
 # Better defaults
 export EDITOR=nvim
 export VISUAL=nvim
-export PATH=$HOME/.local/bin/:$HOME/.cargo/bin/:$HOME/.devcontainers/bin:$PATH
+export PATH=$HOME/.local/bin/:$HOME/.cargo/bin/:$HOME/.devcontainers/bin/:/opt/nvim/bin/:$PATH
 
 eval "$(starship init zsh)"
 
