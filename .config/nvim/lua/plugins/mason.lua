@@ -1,5 +1,3 @@
-local is_in_container = vim.env.container ~= nil or vim.env.REMOTE_CONTAINERS_IPC ~= nil
-
 return {
   {
     "mason-org/mason.nvim",
@@ -9,7 +7,7 @@ return {
   },
   {
     "mason-org/mason-lspconfig.nvim",
-    cond = is_in_container,
+    cond = false,
     opts = {
       ensure_installed = {},
       automatic_installation = false,
