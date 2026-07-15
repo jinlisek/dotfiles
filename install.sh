@@ -11,21 +11,20 @@ DOTFILES_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 echo $DOTFILES_DIR
 
 link_file() {
-    local src="$1"
-    local dest="$2"
-    echo "${BLUE}Linking $src -> $dest${NO_COLOR}"
+  local src="$1"
+  local dest="$2"
+  echo "${BLUE}Linking $src -> $dest${NO_COLOR}"
 
-    if [ -L "$dest" ]; then
-        echo -e "${BLUE}$dest link already exists, creating backup: $dest.bak${NO_COLOR}"
-        rm "$dest"
-    elif [ -e "$dest" ]; then
-        echo -e "${BLUE}$dest already exists, creating backup: $dest.bak${NO_COLOR}"
-        mv "$dest" "$dest.bak"
-    fi
+  if [ -L "$dest" ]; then
+    echo -e "${BLUE}$dest link already exists, creating backup: $dest.bak${NO_COLOR}"
+    rm "$dest"
+  elif [ -e "$dest" ]; then
+    echo -e "${BLUE}$dest already exists, creating backup: $dest.bak${NO_COLOR}"
+    mv "$dest" "$dest.bak"
+  fi
 
-    ln -sf "$src" "$dest"
+  ln -sf "$src" "$dest"
 }
-
 
 mkdir -p "$HOME/.config"
 
@@ -67,5 +66,8 @@ echo -e "${BLUE}Finished installing antidote${NO_COLOR}"
 
 echo -e "${BLUE}Installing nvim${NO_COLOR}"
 link_file "${DOTFILES_DIR}/.config/nvim" "$HOME/.config/nvim"
+
+echo -e "${BLUE}Installing wezterm${NO_COLOR}"
+link_file "${DOTFILES_DIR}/.config/wezterm" "$HOME/.config/wezterm"
 
 echo -e "${BLUE}Finished installing dotfiles${NO_COLOR}"
