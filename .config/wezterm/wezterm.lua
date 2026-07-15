@@ -17,6 +17,11 @@ wezterm.on("window-config-reloaded", function(window)
 	window:set_config_overrides(overrides)
 end)
 
+wezterm.on("gui-startup", function(cmd)
+	local _, _, window = wezterm.mux.spawn_window(cmd or {})
+	window:gui_window():maximize()
+end)
+
 config.hide_tab_bar_if_only_one_tab = true
 
 config.font = wezterm.font("JetBrains Mono Nerd Font")
