@@ -9,12 +9,14 @@ local function get_color_scheme()
 	end
 end
 
-wezterm.on("window-config-reloaded", function(window)
+wezterm.on("update-status", function(window)
 	local overrides = window:get_config_overrides() or {}
 
-	overrides.color_scheme = get_color_scheme()
-
-	window:set_config_overrides(overrides)
+	local current_scheme = get_color_scheme()
+	if overrides.color_scheme ~= current_scheme then
+		overrides.color_scheme = current_scheme
+		window:set_config_overrides(overrides)
+	end
 end)
 
 wezterm.on("gui-startup", function(cmd)
