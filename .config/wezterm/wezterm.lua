@@ -25,11 +25,13 @@ wezterm.on("gui-startup", function(cmd)
 end)
 
 config.hide_tab_bar_if_only_one_tab = true
-
-config.font = wezterm.font("JetBrains Mono Nerd Font")
-
 config.color_scheme = get_color_scheme()
-
 config.scrollback_lines = 100000
+
+if wezterm.target_triple:find("windows") then
+	config.font = wezterm.font("JetBrainsMono NF")
+else
+	config.font = wezterm.font("JetBrains Mono Nerd Font")
+end
 
 return config
