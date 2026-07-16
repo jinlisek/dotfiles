@@ -30,9 +30,6 @@ source $HOME/.antidote/antidote.zsh
 
 antidote load
 
-autoload -Uz compinit
-compinit
-
 if command -v starship > /dev/null 2>&1; then
   eval "$(starship init zsh)"
 fi
