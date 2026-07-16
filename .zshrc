@@ -20,6 +20,9 @@ export PATH=$HOME/.local/bin/:$HOME/.cargo/bin/:$HOME/.devcontainers/bin/:/opt/n
 
 source $HOME/.antidote/antidote.zsh
 
+autoload -Uz compinit
+compinit
+
 # ZSH_PLUGINS_TXT="$HOME/.zsh_plugins.txt"
 # ZSH_PLUGINS_ZSH="$HOME/.zsh_plugins.zsh"
 #
@@ -42,6 +45,4 @@ if command -v task > /dev/null 2>&1; then
   eval "$(task --completion zsh)"
 fi
 
-autoload -Uz compinit
-compinit
 
