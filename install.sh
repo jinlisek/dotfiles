@@ -67,7 +67,7 @@ echo -e "${BLUE}Finished installing antidote${NO_COLOR}"
 echo -e "${BLUE}Installing nvim${NO_COLOR}"
 link_file "${DOTFILES_DIR}/.config/nvim" "$HOME/.config/nvim"
 
-echo -e "${BLUE}Installing wezterm${NO_COLOR}"
-link_file "${DOTFILES_DIR}/.config/wezterm" "$HOME/.config/wezterm"
+echo -e "${BLUE}Installing ghostty${NO_COLOR}"
+link_file "${DOTFILES_DIR}/.config/ghostty" "$HOME/.config/ghostty"
 
 echo -e "${BLUE}Finished installing dotfiles${NO_COLOR}"
