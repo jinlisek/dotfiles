@@ -20,13 +20,15 @@ export PATH=$HOME/.local/bin/:$HOME/.cargo/bin/:$HOME/.devcontainers/bin/:/opt/n
 
 source $HOME/.antidote/antidote.zsh
 
-ZSH_PLUGINS_TXT="$HOME/.zsh_plugins.txt"
-ZSH_PLUGINS_ZSH="$HOME/.zsh_plugins.zsh"
+# ZSH_PLUGINS_TXT="$HOME/.zsh_plugins.txt"
+# ZSH_PLUGINS_ZSH="$HOME/.zsh_plugins.zsh"
+#
+# if [[ ! -f "$ZSH_PLUGINS_ZSH" || "$ZSH_PLUGINS_TXT" -nt "$ZSH_PLUGINS_ZSH" ]]; then
+#   antidote bundle < "$ZSH_PLUGINS_TXT" > "$ZSH_PLUGINS_ZSH"
+# fi
+# source "$ZSH_PLUGINS_ZSH"
 
-if [[ ! -f "$ZSH_PLUGINS_ZSH" || "$ZSH_PLUGINS_TXT" -nt "$ZSH_PLUGINS_ZSH" ]]; then
-  antidote bundle < "$ZSH_PLUGINS_TXT" > "$ZSH_PLUGINS_ZSH"
-fi
-source "$ZSH_PLUGINS_ZSH"
+antidote load
 
 if command -v starship > /dev/null 2>&1; then
   eval "$(starship init zsh)"
