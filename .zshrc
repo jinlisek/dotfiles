@@ -34,3 +34,12 @@ if command -v task > /dev/null 2>&1; then
 fi
 
 zstyle ':plugin:ez-compinit' 'compstyle' 'zshzoo'
+
+backward-kill-not-full-word() {
+  local WORDCHARS=
+  zle backward-kill-word
+  zle -f kill
+}
+
+zle -N backward-kill-not-full-word
+bindkey '^[w' backward-kill-not-full-word
